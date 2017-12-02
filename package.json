@@ -1,0 +1,42 @@
+{
+  "name": "pig-dice-game",
+  "version": "1.0.0",
+  "description": "game for two players",
+  "main": "main.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gordienko-RU/pig-dice-game.git"
+  },
+  "author": "GordienkoRU",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gordienko-RU/pig-dice-game/issues"
+  },
+  "homepage": "https://github.com/Gordienko-RU/pig-dice-game#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
