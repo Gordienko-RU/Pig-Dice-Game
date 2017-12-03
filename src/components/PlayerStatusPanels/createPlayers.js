@@ -1,12 +1,13 @@
 import React from 'react';
 import PlayerBlock from './PlayerArea.jsx';
 
-function createPlayers(playersArr) {
-  return playersArr.map((playerObj, number) => {
+const createPlayers = (playersArr, activePlayerIndex) => {
+  return playersArr.map((playerObj, index) => {
     return (
       <PlayerBlock
-        key={ number }
+        key={ index }
         { ...playerObj }
+        className={ "player-area " + (activePlayerIndex === index ? "active-player" : "") }
       />
     )
   })

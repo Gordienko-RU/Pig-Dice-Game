@@ -2,11 +2,16 @@ import React from 'react';
 import HoldBtn from './HoldBtn.jsx';
 import RollBtn from './RollBtn.jsx';
 
-const BottomControlBlock = () => {
+const BottomControlBlock = (props) => {
   return(
     <div className="bottom-control-container">
-      <RollBtn />
-      <HoldBtn />
+      <p>Current score: { props.currentScore }</p>
+      <RollBtn
+        onClick={ props.handleRoll }
+      />
+      <HoldBtn
+        onClick={ props.handleHold }
+      />
     </div>
   )
 }

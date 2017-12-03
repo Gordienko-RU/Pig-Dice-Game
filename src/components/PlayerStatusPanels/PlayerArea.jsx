@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlayerBlock = (props) => {
   return(
-    <div className="player-area">
+    <div className={ props.className }>
       <p> { props.playerName } </p>
       <p> global score: { props.globalScore } </p>
     </div>

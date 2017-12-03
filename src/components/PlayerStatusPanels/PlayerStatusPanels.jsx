@@ -4,7 +4,7 @@ import createPlayers from './createPlayers.js';
 const PlayerStatusPanels = (props) => {
   return(
     <div className="players-container">
-      { createPlayers(props.playersArr) }
+      { createPlayers(props.playersArr, props.activePlayerIndex) }
     </div>
   )
 }
