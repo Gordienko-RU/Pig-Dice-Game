@@ -6,15 +6,15 @@ class Dice extends React.Component {
   constructor(props) {
     super(props);
   }
-  
-componentDidMount() {
-  pointsHandler.hideAll();
-}
 
-componentDidUpdate() {
-  pointsHandler.hideAll();
-  pointsHandler.showMarkedPoints(this.props.roll)
-}
+  componentDidMount() {
+    pointsHandler.hideAll();
+  }
+
+  componentDidUpdate() {
+    pointsHandler.hideAll();
+    pointsHandler.showMarkedPoints(this.props.roll)
+  }
 
   render() {
     return(

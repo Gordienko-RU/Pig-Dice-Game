@@ -4,7 +4,9 @@ import RollBtn from './RollBtn.jsx';
 
 const BottomControlBlock = (props) => {
   return(
-    <div className="bottom-control-container">
+    <div
+      className={ 'bottom-control-container ' + (props.disabled ? 'disabled-block' : '') }
+    >
       <p>Current score: { props.currentScore }</p>
       <RollBtn
         onClick={ props.handleRoll }

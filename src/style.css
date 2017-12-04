@@ -52,6 +52,20 @@ body {
   width: 100%;
 }
 
+.upper-control-container {
+  width: 20%;
+  height:20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0px;
+}
+
+.upper-control-container > button {
+  width: 100%;
+}
+
 .player-area {
   width: 30%;
 }
@@ -62,8 +76,8 @@ body {
 }
 
 .dice {
-  width: 40%;
-  height: 40%;
+  width: 20vw;
+  height: 20vw;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -79,4 +93,9 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+.disabled-block {
+  pointer-events: none;
+  opacity: 0.4;
 }

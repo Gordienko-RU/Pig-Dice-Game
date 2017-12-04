@@ -1,69 +1,94 @@
 import React from 'react';
+import UpperControlBlock from './UpperControlBlock/UpperControlBlock.jsx';
 import PlayerStatusPanels from './PlayerStatusPanels/PlayerStatusPanels.jsx';
 import BottomControlBlock from './BottomControlBlock/BottomControlBlock.jsx';
 import Dice from './Dice/Dice.jsx';
+import POINTS_FOR_WIN from '../../config.js';
+import services from './services.js';
+import initialState from './initialState.js';
 
 class PlayBoard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      players: [
-        {
-          playerName: 'Player 1',
-          globalScore: 0
-        },
-        {
-          playerName: 'Player 2',
-          globalScore: 0
-        }
-      ],
-      currentScore: 0,
-      activePlayerIndex: 0,
-      diceRoll: 0
-    };
+    this.state = services.copyObject(initialState);
     this.handleHold = this.handleHold.bind(this);
     this.handleRoll = this.handleRoll.bind(this);
+    this.handleNewGame = this.handleNewGame.bind(this);
   };
 
-  changeActivePlayer() {
-    this.setState((prevState) => {
-      return { activePlayerIndex: prevState.activePlayerIndex ? 0 : 1 }
-    })
+  changeActivePlayer(prevState) {
+    const activePlayerIndex = prevState.activePlayerIndex ? 0 : 1;
+    return activePlayerIndex
   }
 
   overrideCurent() {
-    this.setState({ diceRoll: 0, currentScore: 0 });
+    return { diceRoll: 0, currentScore: 0 }
   }
 
   addToGlobal() {
     this.setState((prevState) => {
-      let { players, currentScore, activePlayerIndex } = prevState;
+      const { players, currentScore, activePlayerIndex } = prevState;
       players[activePlayerIndex].globalScore += currentScore;
       return({ players })
     })
   }
 
+  checkWinner() {
+    this.setState((prevState) => {
+      const { activePlayerIndex, players } = prevState;
+      const activePlayer = players[activePlayerIndex];
+      if (activePlayer.globalScore >= POINTS_FOR_WIN) {
+        activePlayer.playerName = 'WINNER'
+        return { players, thereIsWinner: true, disabled: true }
+      }
+    })
+  }
+
   handleHold() {
     this.addToGlobal();
-    this.overrideCurent();
-    this.changeActivePlayer();
+    this.checkWinner();
+    this.setState((prevState) => {
+      if (!prevState.thereIsWinner) {
+        const activePlayerIndex = this.changeActivePlayer(prevState);
+        return { activePlayerIndex }
+      }
+    });
+    this.setState(() => {
+      const { diceRoll, currentScore } = this.overrideCurent();
+      return { diceRoll, currentScore }
+    });
   }
 
   handleRoll() {
-    const maxRoll = 6;
-    const minRoll = 1;
-    const diceRoll = Math.round(Math.random() * (maxRoll - minRoll) + minRoll);
+    const diceRoll = services.getRandom(1, 6);
     this.setState((previousState) => ({
       diceRoll,
       currentScore: previousState.currentScore + diceRoll
     }));
+    if (diceRoll === 1) {
+      this.setState((prevState) => {
+        return { disabled: true }
+      });
+      setTimeout(() => {
+        this.setState((prevState) => {
+        const { diceRoll, currentScore } = this.overrideCurent();
+        const activePlayerIndex = this.changeActivePlayer(prevState);
+        return { diceRoll, currentScore, activePlayerIndex, disabled: false }
+      })}, 1000);
+
+    }
   }
 
-
+  handleNewGame() {
+    this.setState(services.copyObject(initialState));
+  }
 
   render() {
     return(
       <div className="interface-container">
+        <UpperControlBlock
+          handleNewGame={ this.handleNewGame }
+        />
         <PlayerStatusPanels
           playersArr={ this.state.players }
           activePlayerIndex={ this.state.activePlayerIndex }
@@ -75,6 +100,7 @@ class PlayBoard extends React.Component {
           currentScore={ this.state.currentScore }
           handleHold={ this.handleHold }
           handleRoll={ this.handleRoll }
+          disabled={ this.state.disabled }
         />
       </div>
     )

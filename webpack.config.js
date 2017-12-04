@@ -1,5 +1,4 @@
 const path = require('path');
-const { PORT } = require('./config.js');
 
 module.exports = {
   entry: './src/app.js',
@@ -21,7 +20,7 @@ module.exports = {
     ]
   },
   devServer: {
-    port: PORT,
+    port: 3000,
     contentBase: './bin',
     inline:true
   }

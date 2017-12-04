@@ -1,5 +1,3 @@
-const PORT = 3000;
+const POINTS_FOR_WIN = 30;
 
-module.exports = {
-  PORT
-};
+export default POINTS_FOR_WIN
