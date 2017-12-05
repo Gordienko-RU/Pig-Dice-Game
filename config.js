@@ -1,3 +1,3 @@
-const POINTS_FOR_WIN = 30;
+const POINTS_FOR_WIN = 100;
 
 export default POINTS_FOR_WIN
