@@ -1,6 +1,7 @@
 body {
   margin: 0px !important;
   overflow: hidden;
+  font-family: 'Spectral SC', serif;
 }
 
 #pig_dice_game {
@@ -24,6 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 2.2vw;
 }
 .players-container > div {
   display:flex;
@@ -38,7 +40,7 @@ body {
 }
 
 .bottom-control-container {
-  width: 20%;
+  width: 24%;
   height:20%;
   display: flex;
   justify-content: center;
@@ -46,14 +48,11 @@ body {
   flex-wrap: wrap;
   position: absolute;
   bottom: 10%;
-}
-
-.bottom-control-container > button {
-  width: 100%;
+  font-size: 2.2vw;
 }
 
 .upper-control-container {
-  width: 20%;
+  width: 24%;
   height:20%;
   display: flex;
   justify-content: center;
@@ -62,8 +61,13 @@ body {
   top: 0px;
 }
 
-.upper-control-container > button {
+.btn {
   width: 100%;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(66, 184, 221);
+  font-size: 2.2vw;
 }
 
 .player-area {
