@@ -1,0 +1,145 @@
+body {
+  margin: 0px !important;
+  overflow: hidden;
+  font-family: 'Spectral SC', serif;
+}
+
+#pig_dice_game {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.interface-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.players-container {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 2vw;
+}
+.players-container > div {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.players-container > div > p {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-control-container {
+  width: 24%;
+  height:20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 10%;
+  font-size: 2.2vw;
+}
+
+.upper-control-container {
+  width: 24%;
+  height:20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0px;
+  left: 38%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: rgb(66, 184, 221);
+  font-size: 2.2vw;
+}
+
+.btn-reference {
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.player-area {
+  width: 34%;
+}
+
+.active-player {
+  color: green;
+  font-weight: bolder;
+}
+
+.dice {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.point {
+  width: 30%;
+  height: 30%;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.modal-window {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-content {
+  color:white;
+  width: 70vw;
+  position: absolute;
+  z-index: 2;
+}
+
+.modal-content > p {
+  font-size: 2vw;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.disabled-block {
+  pointer-events: none;
+  opacity: 0.4;
+}
