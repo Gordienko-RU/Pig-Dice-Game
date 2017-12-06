@@ -1,18 +1,19 @@
 import React from 'react';
-import NewGameBtn from './NewGameBtn.jsx';
-import ReferenceBtn from './ReferenceBtn.jsx';
-import handleReference from './handleReference.js';
+import RegularBtn from '../buttons/RegularBtn.jsx';
 
 const UpperControlBlock = (props) => {
   return(
     <div className="upper-container-wrapper">
         <div className="upper-control-container">
-          <NewGameBtn
+          <RegularBtn
             onClick={ props.handleNewGame }
-          />
+            title="New game"
+        />
         </div>
-        <ReferenceBtn
-          onClick={ handleReference }
+        <RegularBtn
+          onClick={ props.handleReference }
+          title='?'
+          className="btn-reference"
         />
     </div>
   )

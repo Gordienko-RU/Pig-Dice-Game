@@ -13,7 +13,8 @@ const initialState = {
   activePlayerIndex: 0,
   diceRoll: 0,
   thereIsWinner: false,
-  disabled: false
+  disabled: false,
+  modalActive: false
 };
 
 export default initialState

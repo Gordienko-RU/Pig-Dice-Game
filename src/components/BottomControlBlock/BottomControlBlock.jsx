@@ -1,6 +1,5 @@
 import React from 'react';
-import HoldBtn from './HoldBtn.jsx';
-import RollBtn from './RollBtn.jsx';
+import RegularBtn from '../buttons/RegularBtn.jsx';
 
 const BottomControlBlock = (props) => {
   return(
@@ -8,11 +7,15 @@ const BottomControlBlock = (props) => {
       className={ 'bottom-control-container ' + (props.disabled ? 'disabled-block' : '') }
     >
       <p>Current score: { props.currentScore }</p>
-      <RollBtn
+
+      <RegularBtn
         onClick={ props.handleRoll }
+        title="Roll"
       />
-      <HoldBtn
+      
+      <RegularBtn
         onClick={ props.handleHold }
+        title="Hold"
       />
     </div>
   )

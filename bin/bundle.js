@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(15);
-} else {
   module.exports = __webpack_require__(16);
+} else {
+  module.exports = __webpack_require__(17);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -577,7 +577,7 @@ module.exports = warning;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(5);
   var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(17);
+  var ReactPropTypesSecret = __webpack_require__(18);
   var loggedTypeFailures = {};
 }
 
@@ -876,7 +876,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(20);
+var isTextNode = __webpack_require__(21);
 
 /*eslint-disable no-bitwise */
 
@@ -940,19 +940,50 @@ module.exports = focusNode;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(18);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RegularBtn = function RegularBtn(props) {
+  return _react2.default.createElement(
+    'button',
+    {
+      onClick: props.onClick,
+      tabIndex: '-1',
+      className: 'btn ' + (props.className ? props.className : '')
+    },
+    props.title
+  );
+};
+
+exports.default = RegularBtn;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _PlayBoard = __webpack_require__(27);
+var _PlayBoard = __webpack_require__(28);
 
 var _PlayBoard2 = _interopRequireDefault(_PlayBoard);
 
-var _style = __webpack_require__(44);
+var _style = __webpack_require__(42);
 
 var _style2 = _interopRequireDefault(_style);
 
@@ -961,7 +992,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_PlayBoard2.default, null), document.getElementById('pig_dice_game'));
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -989,7 +1020,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2354,7 +2385,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2373,7 +2404,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2411,15 +2442,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(20);
 } else {
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2655,7 +2686,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2670,7 +2701,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(21);
+var isNode = __webpack_require__(22);
 
 /**
  * @param {*} object The object to check.
@@ -2683,7 +2714,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2711,7 +2742,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2745,8 +2776,8 @@ var containsNode = __webpack_require__(12);
 var focusNode = __webpack_require__(13);
 var emptyObject = __webpack_require__(4);
 var checkPropTypes = __webpack_require__(7);
-var hyphenateStyleName = __webpack_require__(23);
-var camelizeStyleName = __webpack_require__(25);
+var hyphenateStyleName = __webpack_require__(24);
+var camelizeStyleName = __webpack_require__(26);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -18113,7 +18144,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18128,7 +18159,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(24);
+var hyphenate = __webpack_require__(25);
 
 var msPattern = /^ms-/;
 
@@ -18155,7 +18186,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18191,7 +18222,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18206,7 +18237,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(26);
+var camelize = __webpack_require__(27);
 
 var msPattern = /^-ms-/;
 
@@ -18234,7 +18265,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18269,7 +18300,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18279,39 +18310,49 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _UpperControlBlock = __webpack_require__(28);
+var _UpperControlBlock = __webpack_require__(29);
 
 var _UpperControlBlock2 = _interopRequireDefault(_UpperControlBlock);
 
-var _PlayerStatusPanels = __webpack_require__(32);
+var _PlayerStatusPanels = __webpack_require__(30);
 
 var _PlayerStatusPanels2 = _interopRequireDefault(_PlayerStatusPanels);
 
-var _BottomControlBlock = __webpack_require__(35);
+var _BottomControlBlock = __webpack_require__(33);
 
 var _BottomControlBlock2 = _interopRequireDefault(_BottomControlBlock);
 
-var _Dice = __webpack_require__(38);
+var _Dice = __webpack_require__(34);
 
 var _Dice2 = _interopRequireDefault(_Dice);
 
-var _config = __webpack_require__(41);
+var _ModalWindow = __webpack_require__(37);
+
+var _ModalWindow2 = _interopRequireDefault(_ModalWindow);
+
+var _config = __webpack_require__(38);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _services = __webpack_require__(42);
+var _services = __webpack_require__(39);
 
 var _services2 = _interopRequireDefault(_services);
 
-var _initialState = __webpack_require__(43);
+var _initialState = __webpack_require__(40);
 
 var _initialState2 = _interopRequireDefault(_initialState);
+
+var _reference = __webpack_require__(41);
+
+var _reference2 = _interopRequireDefault(_reference);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18333,6 +18374,9 @@ var PlayBoard = function (_React$Component) {
     _this.handleHold = _this.handleHold.bind(_this);
     _this.handleRoll = _this.handleRoll.bind(_this);
     _this.handleNewGame = _this.handleNewGame.bind(_this);
+    _this.handleReference = _this.handleReference.bind(_this);
+    _this.handleModalWindow = _this.handleModalWindow.bind(_this);
+
     return _this;
   }
 
@@ -18369,6 +18413,7 @@ var PlayBoard = function (_React$Component) {
         var activePlayer = players[activePlayerIndex];
         if (activePlayer.globalScore >= _config2.default) {
           activePlayer.playerName = 'WINNER';
+          activePlayer.globalScore = 100;
           return { players: players, thereIsWinner: true, disabled: true };
         }
       });
@@ -18425,7 +18470,17 @@ var PlayBoard = function (_React$Component) {
   }, {
     key: 'handleNewGame',
     value: function handleNewGame() {
-      this.setState(_services2.default.copyObject(_initialState2.default));
+      this.setState(_initialState2.default);
+    }
+  }, {
+    key: 'handleReference',
+    value: function handleReference() {
+      this.setState({ modalActive: true });
+    }
+  }, {
+    key: 'handleModalWindow',
+    value: function handleModalWindow() {
+      this.setState({ modalActive: false });
     }
   }, {
     key: 'render',
@@ -18434,7 +18489,8 @@ var PlayBoard = function (_React$Component) {
         'div',
         { className: 'interface-container' },
         _react2.default.createElement(_UpperControlBlock2.default, {
-          handleNewGame: this.handleNewGame
+          handleNewGame: this.handleNewGame,
+          handleReference: this.handleReference
         }),
         _react2.default.createElement(_PlayerStatusPanels2.default, {
           playersArr: this.state.players,
@@ -18448,7 +18504,10 @@ var PlayBoard = function (_React$Component) {
           handleHold: this.handleHold,
           handleRoll: this.handleRoll,
           disabled: this.state.disabled
-        })
+        }),
+        this.state.modalActive && _react2.default.createElement(_ModalWindow2.default, _extends({}, _reference2.default, {
+          onClick: this.handleModalWindow
+        }))
       );
     }
   }]);
@@ -18459,54 +18518,6 @@ var PlayBoard = function (_React$Component) {
 ;
 
 exports.default = PlayBoard;
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _NewGameBtn = __webpack_require__(29);
-
-var _NewGameBtn2 = _interopRequireDefault(_NewGameBtn);
-
-var _ReferenceBtn = __webpack_require__(30);
-
-var _ReferenceBtn2 = _interopRequireDefault(_ReferenceBtn);
-
-var _handleReference = __webpack_require__(31);
-
-var _handleReference2 = _interopRequireDefault(_handleReference);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var UpperControlBlock = function UpperControlBlock(props) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'upper-container-wrapper' },
-    _react2.default.createElement(
-      'div',
-      { className: 'upper-control-container' },
-      _react2.default.createElement(_NewGameBtn2.default, {
-        onClick: props.handleNewGame
-      })
-    ),
-    _react2.default.createElement(_ReferenceBtn2.default, {
-      onClick: _handleReference2.default
-    })
-  );
-};
-
-exports.default = UpperControlBlock;
 
 /***/ }),
 /* 29 */
@@ -18523,21 +18534,33 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _RegularBtn = __webpack_require__(14);
+
+var _RegularBtn2 = _interopRequireDefault(_RegularBtn);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NewGameBtn = function NewGameBtn(props) {
+var UpperControlBlock = function UpperControlBlock(props) {
   return _react2.default.createElement(
-    "button",
-    {
-      onClick: props.onClick,
-      tabIndex: "-1",
-      className: "btn"
-    },
-    "New game"
+    'div',
+    { className: 'upper-container-wrapper' },
+    _react2.default.createElement(
+      'div',
+      { className: 'upper-control-container' },
+      _react2.default.createElement(_RegularBtn2.default, {
+        onClick: props.handleNewGame,
+        title: 'New game'
+      })
+    ),
+    _react2.default.createElement(_RegularBtn2.default, {
+      onClick: props.handleReference,
+      title: '?',
+      className: 'btn-reference'
+    })
   );
 };
 
-exports.default = NewGameBtn;
+exports.default = UpperControlBlock;
 
 /***/ }),
 /* 30 */
@@ -18554,56 +18577,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ReferenceBtn = function ReferenceBtn(props) {
-  return _react2.default.createElement(
-    "button",
-    {
-      onClick: props.onClick,
-      tabIndex: "-1",
-      className: "btn btn-reference"
-    },
-    "?"
-  );
-};
-
-exports.default = ReferenceBtn;
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-//import { ipcRenderer } from 'electron';
-
-var handleReference = function handleReference() {
-  //  ipcRenderer.send('asynchronous-message', 'SHOW_REFERENCE');
-};
-
-exports.default = handleReference;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _createPlayers = __webpack_require__(33);
+var _createPlayers = __webpack_require__(31);
 
 var _createPlayers2 = _interopRequireDefault(_createPlayers);
 
@@ -18620,7 +18594,7 @@ var PlayerStatusPanels = function PlayerStatusPanels(props) {
 exports.default = PlayerStatusPanels;
 
 /***/ }),
-/* 33 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18636,7 +18610,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _PlayerArea = __webpack_require__(34);
+var _PlayerArea = __webpack_require__(32);
 
 var _PlayerArea2 = _interopRequireDefault(_PlayerArea);
 
@@ -18655,7 +18629,7 @@ var createPlayers = function createPlayers(playersArr, activePlayerIndex) {
 exports.default = createPlayers;
 
 /***/ }),
-/* 34 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18695,7 +18669,7 @@ var PlayerBlock = function PlayerBlock(props) {
 exports.default = PlayerBlock;
 
 /***/ }),
-/* 35 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18709,13 +18683,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HoldBtn = __webpack_require__(36);
+var _RegularBtn = __webpack_require__(14);
 
-var _HoldBtn2 = _interopRequireDefault(_HoldBtn);
-
-var _RollBtn = __webpack_require__(37);
-
-var _RollBtn2 = _interopRequireDefault(_RollBtn);
+var _RegularBtn2 = _interopRequireDefault(_RegularBtn);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18731,16 +18701,145 @@ var BottomControlBlock = function BottomControlBlock(props) {
       'Current score: ',
       props.currentScore
     ),
-    _react2.default.createElement(_RollBtn2.default, {
-      onClick: props.handleRoll
+    _react2.default.createElement(_RegularBtn2.default, {
+      onClick: props.handleRoll,
+      title: 'Roll'
     }),
-    _react2.default.createElement(_HoldBtn2.default, {
-      onClick: props.handleHold
+    _react2.default.createElement(_RegularBtn2.default, {
+      onClick: props.handleHold,
+      title: 'Hold'
     })
   );
 };
 
 exports.default = BottomControlBlock;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _pointsHandler = __webpack_require__(35);
+
+var _pointsHandler2 = _interopRequireDefault(_pointsHandler);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dice = function (_React$Component) {
+  _inherits(Dice, _React$Component);
+
+  function Dice(props) {
+    _classCallCheck(this, Dice);
+
+    var _this = _possibleConstructorReturn(this, (Dice.__proto__ || Object.getPrototypeOf(Dice)).call(this, props));
+
+    _this.state = {
+      points: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    };
+    return _this;
+  }
+
+  _createClass(Dice, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.roll !== this.props.roll) {
+        var points = _pointsHandler2.default.updatePoints(this.props.roll);
+        this.setState({ points: points });
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'dice' },
+        _pointsHandler2.default.createPoints(this.state.points)
+      );
+    }
+  }]);
+
+  return Dice;
+}(_react2.default.Component);
+
+exports.default = Dice;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Point = __webpack_require__(36);
+
+var _Point2 = _interopRequireDefault(_Point);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var createPoints = function createPoints(pointsArr) {
+  return pointsArr.map(function (visible, index) {
+    var className = 'point ' + (visible ? '' : 'hidden');
+    return _react2.default.createElement(_Point2.default, {
+      className: className,
+      key: index
+    });
+  });
+};
+
+var updatePoints = function updatePoints(roll) {
+  var points = void 0;
+  switch (roll) {
+    case 1:
+      points = [0, 0, 0, 0, 1, 0, 0, 0, 0];break;
+    case 2:
+      points = [1, 0, 0, 0, 0, 0, 0, 0, 1];break;
+    case 3:
+      points = [1, 0, 0, 0, 1, 0, 0, 0, 1];break;
+    case 4:
+      points = [1, 0, 1, 0, 0, 0, 1, 0, 1];break;
+    case 5:
+      points = [1, 0, 1, 0, 1, 0, 1, 0, 1];break;
+    case 6:
+      points = [1, 1, 1, 0, 0, 0, 1, 1, 1];break;
+    default:
+      points = [0, 0, 0, 0, 0, 0, 0, 0, 0];break;
+  }
+  console.log(points);
+  return points;
+};
+
+var pointsHandler = {
+  createPoints: createPoints,
+  updatePoints: updatePoints
+};
+
+exports.default = pointsHandler;
 
 /***/ }),
 /* 36 */
@@ -18759,19 +18858,11 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HoldBtn = function HoldBtn(props) {
-  return _react2.default.createElement(
-    "button",
-    {
-      onClick: props.onClick,
-      tabIndex: "-1",
-      className: "btn"
-    },
-    "Hold"
-  );
+var Point = function Point(props) {
+  return _react2.default.createElement('div', { className: props.className });
 };
 
-exports.default = HoldBtn;
+exports.default = Point;
 
 /***/ }),
 /* 37 */
@@ -18790,196 +18881,31 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var RollBtn = function RollBtn(props) {
+var ModalWindow = function ModalWindow(props) {
   return _react2.default.createElement(
-    "button",
-    {
-      onClick: props.onClick,
-      tabIndex: "-1",
-      className: "btn"
-    },
-    "Roll"
+    "div",
+    { className: "modal-window", onClick: props.onClick },
+    _react2.default.createElement(
+      "div",
+      { className: "modal-content" },
+      _react2.default.createElement(
+        "h2",
+        null,
+        props.title
+      ),
+      _react2.default.createElement(
+        "p",
+        null,
+        props.description
+      )
+    )
   );
 };
 
-exports.default = RollBtn;
+exports.default = ModalWindow;
 
 /***/ }),
 /* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _pointsHandler = __webpack_require__(39);
-
-var _pointsHandler2 = _interopRequireDefault(_pointsHandler);
-
-var _Point = __webpack_require__(40);
-
-var _Point2 = _interopRequireDefault(_Point);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Dice = function (_React$Component) {
-  _inherits(Dice, _React$Component);
-
-  function Dice(props) {
-    _classCallCheck(this, Dice);
-
-    return _possibleConstructorReturn(this, (Dice.__proto__ || Object.getPrototypeOf(Dice)).call(this, props));
-  }
-
-  _createClass(Dice, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      _pointsHandler2.default.hideAll();
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      _pointsHandler2.default.hideAll();
-      _pointsHandler2.default.showMarkedPoints(this.props.roll);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'dice' },
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null),
-        _react2.default.createElement(_Point2.default, null)
-      );
-    }
-  }]);
-
-  return Dice;
-}(_react2.default.Component);
-
-exports.default = Dice;
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var showMarkedPoints = function showMarkedPoints(roll) {
-  var points = Array.from(document.getElementsByClassName('point'));
-  switch (roll) {
-    case 1:
-      show(points, 4);break;
-    case 2:
-      show(points, 0, 8);break;
-    case 3:
-      show(points, 0, 4, 8);break;
-    case 4:
-      show(points, 0, 2, 6, 8);break;
-    case 5:
-      show(points, 0, 2, 4, 6, 8);break;
-    case 6:
-      show(points, 0, 1, 2, 6, 7, 8);break;
-  }
-};
-
-var show = function show(points) {
-  for (var _len = arguments.length, toShow = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    toShow[_key - 1] = arguments[_key];
-  }
-
-  points.forEach(function (point, index) {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = toShow[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var toShowIndex = _step.value;
-
-        if (index === toShowIndex) {
-          point.classList.remove('hidden');
-          break;
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  });
-};
-
-var hideAll = function hideAll() {
-  var points = Array.from(document.getElementsByClassName('point'));
-  points.forEach(function (point) {
-    point.classList.add('hidden');
-  });
-};
-
-var pointsHandler = { showMarkedPoints: showMarkedPoints, hideAll: hideAll };
-exports.default = pointsHandler;
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Point = function Point() {
-  return _react2.default.createElement("div", { className: "point" });
-};
-
-exports.default = Point;
-
-/***/ }),
-/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18993,7 +18919,7 @@ var POINTS_FOR_WIN = 100;
 exports.default = POINTS_FOR_WIN;
 
 /***/ }),
-/* 42 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19018,7 +18944,7 @@ var services = {
 exports.default = services;
 
 /***/ }),
-/* 43 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19039,19 +18965,38 @@ var initialState = {
   activePlayerIndex: 0,
   diceRoll: 0,
   thereIsWinner: false,
-  disabled: false
+  disabled: false,
+  modalActive: false
 };
 
 exports.default = initialState;
 
 /***/ }),
-/* 44 */
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+                    value: true
+});
+var title = "Pig-dice-game reference:";
+var description = "The rules are simple as cake, you just need to collect 100 points.\n                    But be careful, if you will roll 1 point, your current score will be\n                    override and it will be turn of your opponent.\n                    Get luck and good roll, bro :D";
+var reference = {
+                    title: title,
+                    description: description
+};
+exports.default = reference;
+
+/***/ }),
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(45);
+var content = __webpack_require__(43);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -19059,7 +19004,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(47)(content, options);
+var update = __webpack_require__(45)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -19076,21 +19021,21 @@ if(false) {
 }
 
 /***/ }),
-/* 45 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(46)(undefined);
+exports = module.exports = __webpack_require__(44)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0px !important;\n  overflow: hidden;\n  font-family: 'Spectral SC', serif;\n}\n\n#pig_dice_game {\n  width: 100%;\n  height: 100%;\n  border: 1px solid black;\n}\n\n.interface-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n\n.players-container {\n  width: 100%;\n  height: 90%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  font-size: 2vw;\n}\n.players-container > div {\n  display:flex;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n\n.players-container > div > p {\n  width: 60%;\n  display: flex;\n  justify-content: center;\n}\n\n.bottom-control-container {\n  width: 24%;\n  height:20%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  flex-wrap: wrap;\n  position: absolute;\n  bottom: 10%;\n  font-size: 2.2vw;\n}\n\n.upper-control-container {\n  width: 24%;\n  height:20%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  position: absolute;\n  top: 0px;\n}\n\nbutton {\n  cursor: pointer;\n}\n\n.btn {\n  width: 100%;\n  color: white;\n  border-radius: 4px;\n  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);\n  background: rgb(66, 184, 221);\n  font-size: 2.2vw;\n}\n\n.btn-reference {\n  width: 3vw;\n  height: 3vw;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n\n.player-area {\n  width: 34%;\n}\n\n.active-player {\n  color: green;\n  font-weight: bolder;\n}\n\n.dice {\n  width: 20vw;\n  height: 20vw;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  position: absolute;\n}\n\n.point {\n  width: 30%;\n  height: 30%;\n  background-color: black;\n  border-radius: 50%;\n}\n\n.hidden {\n  visibility: hidden;\n}\n\n.disabled-block {\n  pointer-events: none;\n  opacity: 0.4;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin: 0px !important;\n  overflow: hidden;\n  font-family: 'Spectral SC', serif;\n}\n\n#pig_dice_game {\n  width: 100%;\n  height: 100%;\n  border: 1px solid black;\n}\n\n.interface-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n\n.players-container {\n  width: 100%;\n  height: 90%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  font-size: 2vw;\n}\n.players-container > div {\n  display:flex;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n\n.players-container > div > p {\n  width: 60%;\n  display: flex;\n  justify-content: center;\n}\n\n.bottom-control-container {\n  width: 24%;\n  height:20%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  flex-wrap: wrap;\n  position: absolute;\n  bottom: 10%;\n  font-size: 2.2vw;\n}\n\n.upper-control-container {\n  width: 24%;\n  height:20%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  position: absolute;\n  top: 0px;\n  left: 38%;\n}\n\nbutton {\n  cursor: pointer;\n}\n\n.btn {\n  width: 100%;\n  color: white;\n  border-radius: 4px;\n  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);\n  background: rgb(66, 184, 221);\n  font-size: 2.2vw;\n}\n\n.btn-reference {\n  width: 3vw;\n  height: 3vw;\n  position: absolute;\n  right: 0px;\n  top: 0px;\n}\n\n.player-area {\n  width: 34%;\n}\n\n.active-player {\n  color: green;\n  font-weight: bolder;\n}\n\n.dice {\n  width: 20vw;\n  height: 20vw;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n  position: absolute;\n}\n\n.point {\n  width: 30%;\n  height: 30%;\n  background-color: black;\n  border-radius: 50%;\n}\n\n.modal-window {\n  width: 100vw;\n  height: 100vh;\n  position: fixed;\n  z-index: 1;\n  background-color: rgba(0, 0, 0, 0.8);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n\n.modal-content {\n  color:white;\n  width: 70vw;\n  position: absolute;\n  z-index: 2;\n}\n\n.modal-content > p {\n  font-size: 2vw;\n}\n\n.hidden {\n  visibility: hidden;\n}\n\n.display-none {\n  display: none !important;\n}\n\n.disabled-block {\n  pointer-events: none;\n  opacity: 0.4;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 46 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /*
@@ -19172,7 +19117,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 47 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -19228,7 +19173,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(48);
+var	fixUrls = __webpack_require__(46);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -19544,7 +19489,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 48 */
+/* 46 */
 /***/ (function(module, exports) {
 
 

@@ -3,9 +3,11 @@ import UpperControlBlock from './UpperControlBlock/UpperControlBlock.jsx';
 import PlayerStatusPanels from './PlayerStatusPanels/PlayerStatusPanels.jsx';
 import BottomControlBlock from './BottomControlBlock/BottomControlBlock.jsx';
 import Dice from './Dice/Dice.jsx';
+import ModalWindow from './ModalWindow/ModalWindow.jsx';
 import POINTS_FOR_WIN from '../../config.js';
 import services from './services.js';
 import initialState from './initialState.js';
+import reference from './reference.js';
 
 class PlayBoard extends React.Component {
   constructor(props) {
@@ -14,6 +16,9 @@ class PlayBoard extends React.Component {
     this.handleHold = this.handleHold.bind(this);
     this.handleRoll = this.handleRoll.bind(this);
     this.handleNewGame = this.handleNewGame.bind(this);
+    this.handleReference = this.handleReference.bind(this);
+    this.handleModalWindow = this.handleModalWindow.bind(this);
+
   };
 
   changeActivePlayer(prevState) {
@@ -38,7 +43,8 @@ class PlayBoard extends React.Component {
       const { activePlayerIndex, players } = prevState;
       const activePlayer = players[activePlayerIndex];
       if (activePlayer.globalScore >= POINTS_FOR_WIN) {
-        activePlayer.playerName = 'WINNER'
+        activePlayer.playerName = 'WINNER';
+        activePlayer.globalScore = 100;
         return { players, thereIsWinner: true, disabled: true }
       }
     })
@@ -80,7 +86,15 @@ class PlayBoard extends React.Component {
   }
 
   handleNewGame() {
-    this.setState(services.copyObject(initialState));
+    this.setState(initialState);
+  }
+
+  handleReference() {
+    this.setState({ modalActive: true });
+  }
+
+  handleModalWindow() {
+    this.setState({ modalActive: false });
   }
 
   render() {
@@ -88,6 +102,7 @@ class PlayBoard extends React.Component {
       <div className="interface-container">
         <UpperControlBlock
           handleNewGame={ this.handleNewGame }
+          handleReference={ this.handleReference }
         />
         <PlayerStatusPanels
           playersArr={ this.state.players }
@@ -102,6 +117,10 @@ class PlayBoard extends React.Component {
           handleRoll={ this.handleRoll }
           disabled={ this.state.disabled }
         />
+        { this.state.modalActive && <ModalWindow
+          { ...reference }
+          onClick={ this.handleModalWindow }
+        /> }
       </div>
     )
   }

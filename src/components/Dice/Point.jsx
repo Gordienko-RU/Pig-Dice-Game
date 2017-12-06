@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Point = () => {
+const Point = (props) => {
   return(
-    <div className="point"></div>
+    <div className={ props.className }></div>
   )
 }
 

@@ -108,8 +108,35 @@ button {
   border-radius: 50%;
 }
 
+.modal-window {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal-content {
+  color:white;
+  width: 70vw;
+  position: absolute;
+  z-index: 2;
+}
+
+.modal-content > p {
+  font-size: 2vw;
+}
+
 .hidden {
   visibility: hidden;
+}
+
+.display-none {
+  display: none !important;
 }
 
 .disabled-block {

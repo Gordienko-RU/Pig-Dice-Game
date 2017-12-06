@@ -1,32 +1,34 @@
-const showMarkedPoints = (roll) => {
-  const points = Array.from(document.getElementsByClassName('point'));
+import React from 'react';
+import Point from './Point.jsx';
+
+const createPoints = (pointsArr) => {
+  return pointsArr.map((visible, index) => {
+    const className = ('point ' + (visible ? '' : 'hidden'));
+    return <Point
+      className={ className }
+      key={ index }
+    />
+  })
+}
+
+const updatePoints = (roll) => {
+  let points;
   switch(roll) {
-    case 1: show(points, 4); break;
-    case 2: show(points, 0, 8); break;
-    case 3: show(points, 0, 4, 8); break;
-    case 4: show(points, 0, 2, 6, 8); break;
-    case 5: show(points, 0, 2, 4, 6, 8); break;
-    case 6: show(points, 0, 1, 2, 6, 7, 8); break;
+    case 1: points = [0, 0, 0, 0, 1, 0, 0, 0, 0]; break;
+    case 2: points = [1, 0, 0, 0, 0, 0, 0, 0, 1]; break;
+    case 3: points = [1, 0, 0, 0, 1, 0, 0, 0, 1]; break;
+    case 4: points = [1, 0, 1, 0, 0, 0, 1, 0, 1]; break;
+    case 5: points = [1, 0, 1, 0, 1, 0, 1, 0, 1]; break;
+    case 6: points = [1, 1, 1, 0, 0, 0, 1, 1, 1]; break;
+    default: points = [0, 0, 0, 0, 0, 0, 0, 0, 0]; break;
   }
+  console.log(points);
+  return points
 }
 
-const show = (points, ...toShow) => {
-  points.forEach((point, index) => {
-    for ( const toShowIndex of toShow) {
-      if (index === toShowIndex) {
-        point.classList.remove('hidden');
-        break;
-      }
-    }
-  })
+const pointsHandler = {
+  createPoints,
+  updatePoints
 }
 
-const hideAll = () => {
-  const points = Array.from(document.getElementsByClassName('point'));
-  points.forEach((point) => {
-    point.classList.add('hidden');
-  })
-}
-
-const pointsHandler = { showMarkedPoints, hideAll};
 export default pointsHandler;
